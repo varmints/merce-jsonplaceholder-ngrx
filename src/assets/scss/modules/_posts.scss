@@ -1,0 +1,78 @@
+.asymetric-column {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  right: 20%;
+  min-height: 100%;
+  padding-top: 72px;
+
+  .glass {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    min-height: 100%;
+    background: rgba(250, 250, 250, 0.16);
+    border-right: 1px solid rgba(250, 250, 250, 0.25);
+    border-left: 1px solid rgba(250, 250, 250, 0.25);
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+  }
+
+  .row {
+    position: relative;
+
+    .col-6 {
+      margin-bottom: 72px;
+    }
+  }
+}
+
+.card {
+  color: #041c26;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 16px 24px rgba(24, 11, 55, 0.25);
+  transition: 400ms linear;
+
+  &__body {
+    padding: 48px;
+
+    .post-title {
+      font-family: "Oswald";
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 48px;
+      margin-bottom: 24px;
+    }
+    .post-text {
+      font-family: "Inter";
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    background: linear-gradient(90deg, #c8ff46, #97ff46 100%);
+    cursor: pointer;
+
+    .footer-text {
+      font-family: "Inter";
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      text-decoration-line: underline;
+    }
+  }
+
+  &.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 36px 48px rgba(13, 4, 35, 0.5);
+  }
+}
