@@ -25,6 +25,7 @@ export class PostComponent implements OnInit {
     this.comment$ = commentStore.pipe(select(getCommentsState));
     this.post$ = postStore.pipe(select(getPostState));
   }
+
   routerSubscription!: Subscription;
   postId: number = 0;
   commentError: any;
@@ -42,6 +43,7 @@ export class PostComponent implements OnInit {
     this.commentSub();
     this.postSub();
   }
+
   routeSub() {
     this.routerSubscription = this.route.params.subscribe((params) => {
       this.postId = Number(params.postId);
@@ -49,6 +51,7 @@ export class PostComponent implements OnInit {
       this.getPost();
     });
   }
+
   postSub() {
     this.postSubscription = this.post$
       .pipe(
@@ -58,6 +61,7 @@ export class PostComponent implements OnInit {
       )
       .subscribe();
   }
+
   commentSub() {
     this.commentSubscription = this.comment$
       .pipe(
@@ -68,6 +72,7 @@ export class PostComponent implements OnInit {
       )
       .subscribe();
   }
+
   getComments() {
     const id: Id = { id: this.postId };
     this.commentStore.dispatch(

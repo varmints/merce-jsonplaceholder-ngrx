@@ -19,6 +19,7 @@ const reducer = createReducer(
   }),
   // one post
   on(PostActions.GetPostAction, (state) => state),
+
   on(PostActions.SuccessGetPostAction, (state: PostState, { payload }) => {
     return { ...state, Post: payload };
   })

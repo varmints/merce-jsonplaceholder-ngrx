@@ -19,6 +19,7 @@ export class PostListComponent implements OnInit {
   ) {
     this.post$ = store.pipe(select(getPostsState));
   }
+
   post$: Observable<PostState>;
   postSubscription!: Subscription;
   postList: Post[] = [];
@@ -37,9 +38,10 @@ export class PostListComponent implements OnInit {
     this.store.dispatch(PostActions.BeginGetPostsAction());
   }
 
-  goTo(item: Post) {
-    this.router.navigate(['/post/' + item.id]);
+  goTo(post: Post) {
+    this.router.navigate(['/post/' + post.id]);
   }
+
   ngOnDestroy() {
     if (this.postSubscription) {
       this.postSubscription.unsubscribe();

@@ -3,7 +3,7 @@
   <div class="header__nav">
     <div class="header__subtitle">SOCIAL<span>:CENTRE</span></div>
     <div class="header__title">latest</div>
-    <div class="header__pagination">
+    <div class="header__pagination" *ngIf="showNav$ | async">
       <button class="prev-page">
         <img src="assets/svg/icons__arrow--left--white.svg" />
       </button>

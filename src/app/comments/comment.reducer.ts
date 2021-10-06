@@ -15,6 +15,7 @@ const reducer = createReducer(
       return { ...state, Comments: payload };
     }
   ),
+
   on(CommentActions.ErrorCommentAction, (state: CommentState, error: Error) => {
     console.log(error);
     return { ...state, CommentError: error };

@@ -9,6 +9,7 @@ export default class CommentState {
 export const initializeState = (): CommentState => {
   return { Comments: Array<Comment>(), CommentError: null };
 };
+
 export const getCommentState =
   createFeatureSelector<CommentState>('commentFeature');
 
