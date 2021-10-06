@@ -34,3 +34,7 @@
   box-sizing: border-box;
   backdrop-filter: blur(4px);
 }
+
+@mixin primary-gradient() {
+  background: linear-gradient(90deg, #c8ff46, #97ff46 100%);
+}

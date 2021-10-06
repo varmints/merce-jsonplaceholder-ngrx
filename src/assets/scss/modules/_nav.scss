@@ -26,6 +26,7 @@
     font-weight: 900;
     font-size: 40px;
     line-height: 40px;
+    cursor: pointer;
     right: 64px;
     bottom: 48px;
     @include media-breakpoint-down(xl) {
@@ -108,7 +109,7 @@
       font-weight: 600;
       font-size: 64px;
       line-height: 64px;
-      background: linear-gradient(90deg, #c8ff46, #97ff46 100%);
+      @include primary-gradient();
       background-clip: border-box;
       background-clip: text;
       -webkit-text-fill-color: transparent;

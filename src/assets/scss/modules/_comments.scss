@@ -1,0 +1,62 @@
+.comments {
+  &__header {
+    position: relative;
+    margin-top: 7px;
+    height: 28px;
+    padding: 0 48px 0 48px;
+    @include primary-gradient();
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 7px;
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  &__list {
+    padding: 24px;
+
+    > .row {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__user {
+    text-align: right;
+  }
+
+  &__username {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__email {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    color: #5522e8;
+  }
+
+  &__body {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &__add {
+    position: relative;
+    height: 80px;
+    @include primary-gradient();
+  }
+
+  &__add-icon {
+    position: absolute;
+    right: 24px;
+    top: 0;
+    transform: translateY(-50%);
+  }
+}
