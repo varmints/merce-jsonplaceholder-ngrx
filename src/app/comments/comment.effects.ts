@@ -26,4 +26,20 @@ export class CommentEffects {
       )
     )
   );
+
+  CreateComment$: Observable<Action> = createEffect(() =>
+    this.action$.pipe(
+      ofType(CommentActions.BeginCreateCommentAction),
+      mergeMap((action) =>
+        this.api.postComments(action.payload).pipe(
+          map((data: Comment) => {
+            return CommentActions.SuccessCreateCommentAction({ payload: data });
+          }),
+          catchError((error: Error) => {
+            return of(CommentActions.ErrorCommentAction(error));
+          })
+        )
+      )
+    )
+  );
 }

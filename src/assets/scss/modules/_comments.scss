@@ -58,5 +58,97 @@
     right: 24px;
     top: 0;
     transform: translateY(-50%);
+
+    button {
+      cursor: pointer;
+    }
+  }
+}
+
+.comment-form {
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .rounded-circle {
+      position: absolute;
+      right: 48px;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 48px;
+    top: 0;
+    transform: translateY(-50%);
+    font-family: "Oswald";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  &__container {
+    padding: 48px 48px 0 48px;
+  }
+
+  &__input {
+    width: 50%;
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__textarea {
+    font-family: "Inter";
+    font-weight: normal;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 32px;
+    resize: none;
+    box-sizing: border-box;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    &--cancel {
+      font-size: 16px;
+      line-height: 19px;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+
+    &--submit {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background: #041c26;
+      padding: 32px 96px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
   }
 }

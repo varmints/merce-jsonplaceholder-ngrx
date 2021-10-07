@@ -3,12 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import Comment from 'src/app/comments/comment.model';
 import CommentState, { getCommentsState } from 'src/app/comments/comment.state';
 import * as CommentActions from '../../comments/comment.action';
 import * as PostActions from '../../posts/post.action';
 import Id from 'src/app/comments/id.model';
 import Post from 'src/app/posts/post.model';
 import PostState, { getPostState } from 'src/app/posts/post.state';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -37,6 +39,15 @@ export class PostComponent implements OnInit {
   comment$: Observable<CommentState>;
   commentSubscription!: Subscription;
   commentList: any;
+  // add comment
+  isCommentFormShow: boolean = false;
+  commentForm = new FormGroup({
+    postId: new FormControl(0),
+    id: new FormControl(501),
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    body: new FormControl('', Validators.required),
+  });
 
   ngOnInit() {
     this.routeSub();
@@ -85,8 +96,30 @@ export class PostComponent implements OnInit {
     this.postStore.dispatch(PostActions.BeginGetPostAction({ payload: id }));
   }
 
+  postComment(val: Comment) {
+    const comment: Comment = val;
+    comment.postId = this.postId;
+    this.commentStore.dispatch(
+      CommentActions.BeginCreateCommentAction({ payload: comment })
+    );
+  }
+
+  onSubmit(val: Comment) {
+    this.postComment(val);
+    this.resetForm();
+    this.toggleDisplay();
+  }
+
+  resetForm() {
+    this.commentForm.reset();
+  }
+
   goToPostList() {
     this.router.navigate(['']);
+  }
+
+  toggleDisplay() {
+    this.isCommentFormShow = !this.isCommentFormShow;
   }
 
   ngOnDestroy() {

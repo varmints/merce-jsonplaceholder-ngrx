@@ -2,6 +2,7 @@ import Post from 'src/app/posts/post.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import Comment from 'src/app/comments/comment.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,16 @@ export class ApiService {
   getComments(postId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(
       this.apiURL + 'posts/' + postId + '/comments'
+    );
+  }
+
+  postComments(payload: Comment): Observable<Comment> {
+    return this.http.post<Comment>(
+      this.apiURL + 'posts/' + payload.postId + '/comments',
+      JSON.stringify(payload),
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
     );
   }
 }

@@ -21,3 +21,18 @@ export const ErrorCommentAction = createAction(
   '[Comment] - Error',
   props<Error>()
 );
+
+export const CreateCommentAction = createAction(
+  '[Comment] - Create Comment',
+  props<Comment>()
+);
+
+export const BeginCreateCommentAction = createAction(
+  '[Comment] - Begin Create Comment',
+  props<{ payload: Comment }>()
+);
+
+export const SuccessCreateCommentAction = createAction(
+  '[Comment] - Sucess Create Comment',
+  props<{ payload: Comment }>()
+);
