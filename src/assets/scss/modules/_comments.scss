@@ -3,8 +3,12 @@
     position: relative;
     margin-top: 7px;
     height: 28px;
-    padding: 0 48px 0 48px;
+    padding: 0 48px;
     @include primary-gradient();
+    @include media-breakpoint-down(xl) {
+      height: 20px;
+      padding: 0 32px;
+    }
   }
 
   &__title {
@@ -14,6 +18,10 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 40px;
+    @include media-breakpoint-down(xl) {
+      font-size: 24px;
+      line-height: 36px;
+    }
   }
 
   &__list {
@@ -32,6 +40,10 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
+    @include media-breakpoint-down(xl) {
+      font-size: 14px;
+      line-height: 17px;
+    }
   }
 
   &__email {
@@ -40,17 +52,28 @@
     line-height: 15px;
     text-decoration-line: underline;
     color: #5522e8;
+    @include media-breakpoint-down(xl) {
+      font-size: 8px;
+      line-height: 10px;
+    }
   }
 
   &__body {
     font-size: 20px;
     line-height: 32px;
+    @include media-breakpoint-down(xl) {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   &__add {
     position: relative;
     height: 80px;
     @include primary-gradient();
+    @include media-breakpoint-down(xl) {
+      height: 56px;
+    }
   }
 
   &__add-icon {
@@ -76,6 +99,9 @@
       right: 48px;
       top: 0;
       transform: translateY(-50%);
+      @include media-breakpoint-down(xl) {
+        right: 32px;
+      }
     }
   }
 
@@ -88,19 +114,32 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 40px;
+    @include media-breakpoint-down(xl) {
+      left: 32px;
+      font-size: 24px;
+      line-height: 36px;
+    }
   }
 
   &__container {
     padding: 48px 48px 0 48px;
+    @include media-breakpoint-down(xl) {
+      padding: 32px 32px 0 32px;
+    }
   }
 
   &__input {
     width: 50%;
     border: none;
-    padding: 12px;
+    padding: 12px 24px;
     font-size: 20px;
     line-height: 32px;
     margin-bottom: 24px;
+    @include media-breakpoint-down(xl) {
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   &__textarea {
@@ -108,11 +147,16 @@
     font-weight: normal;
     width: 100%;
     border: none;
-    padding: 12px;
+    padding: 12px 24px;
     font-size: 20px;
     line-height: 32px;
     resize: none;
     box-sizing: border-box;
+    @include media-breakpoint-down(xl) {
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   &__footer {
@@ -133,6 +177,10 @@
       line-height: 19px;
       text-decoration-line: underline;
       cursor: pointer;
+      @include media-breakpoint-down(xl) {
+        font-size: 12px;
+        line-height: 15px;
+      }
     }
 
     &--submit {
@@ -145,6 +193,18 @@
       font-size: 24px;
       line-height: 29px;
       cursor: pointer;
+      @include media-breakpoint-down(xl) {
+        padding: 20px 68px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      img {
+        @include media-breakpoint-down(xl) {
+          width: 19px;
+          height: 19px;
+        }
+      }
 
       &:disabled {
         cursor: not-allowed;

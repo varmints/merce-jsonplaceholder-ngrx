@@ -83,7 +83,7 @@
     @include media-breakpoint-down(xl) {
       font-size: 24px;
       line-height: 24px;
-      right: 65px;
+      right: 56px;
       top: 44px;
     }
 
@@ -92,16 +92,30 @@
     }
 
     .prev-page {
-      margin-right: 27px;
+      margin-right: 26px;
       @include media-breakpoint-down(xl) {
-        margin-right: 24px;
+        margin-right: 20px;
+      }
+
+      img {
+        @include media-breakpoint-down(xl) {
+          width: 21.33px;
+          height: 20.74px;
+        }
       }
     }
 
     .next-page {
-      margin-left: 27px;
+      margin-left: 26px;
       @include media-breakpoint-down(xl) {
-        margin-left: 24px;
+        margin-left: 20px;
+      }
+
+      img {
+        @include media-breakpoint-down(xl) {
+          width: 21.33px;
+          height: 20.74px;
+        }
       }
     }
 
@@ -125,4 +139,13 @@
 .header__nav > div {
   position: absolute;
   pointer-events: auto;
+}
+
+@include media-breakpoint-down(md) {
+  .header {
+    top: initial;
+    left: initial;
+    right: initial;
+    overflow: visible;
+  }
 }

@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-6" *ngFor="let post of postList">
-    <div class="card post-list">
+  <div class="col-12 col-md-6" *ngFor="let post of postList">
+    <div class="card post-list mb-5">
       <div class="card__header">
         <div class="rounded-circle rounded-circle--gradient">
           <img src="assets/svg/card__icon.svg" />
@@ -14,7 +14,10 @@
       </div>
       <div class="card__footer" (click)="goTo(post)">
         <span class="footer-text">Zobacz</span>
-        <img src="assets/svg/arrow--upright--black.svg" />
+        <img
+          class="card__footer-icon-upright"
+          src="assets/svg/arrow--upright--black.svg"
+        />
       </div>
     </div>
   </div>
