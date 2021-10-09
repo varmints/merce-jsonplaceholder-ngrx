@@ -1,0 +1,130 @@
+.card {
+  color: $black;
+  background: $white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 16px 24px $card-shadow;
+  transition: 400ms linear;
+
+  &__header {
+    padding: 24px 24px 0 24px;
+
+    &--black {
+      display: flex;
+      justify-content: space-between;
+      background: $black;
+      height: 72px;
+      margin-bottom: 24px;
+      box-sizing: border-box;
+      @include media-breakpoint-down(xl) {
+        height: 64px;
+      }
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+
+    img {
+      @include media-breakpoint-down(xl) {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+
+  &__body {
+    padding: 24px 48px 48px 48px;
+    @include media-breakpoint-down(xl) {
+      padding: 24px 32px 32px 32px;
+    }
+
+    .card__title {
+      font-family: "Oswald";
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 48px;
+      margin-bottom: 24px;
+      @include media-breakpoint-down(xl) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    .card__text {
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 32px;
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    @include primary-gradient();
+    cursor: pointer;
+    @include media-breakpoint-down(xl) {
+      padding: 20px 32px;
+    }
+
+    &-text {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      text-decoration-line: underline;
+      @include media-breakpoint-down(xl) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+
+    &-icon-upright {
+      @include media-breakpoint-down(xl) {
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+
+  &__add-comment {
+    @include primary-gradient();
+  }
+
+  &--active:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 36px 48px $card-shadow-active;
+  }
+
+  &__rounded-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: none;
+    @include media-breakpoint-down(xl) {
+      height: 64px;
+      width: 64px;
+    }
+
+    img {
+      @include media-breakpoint-down(xl) {
+        transform: scale(0.65);
+      }
+    }
+
+    &--gradient {
+      @include primary-gradient();
+    }
+
+    &--black {
+      background: $black;
+    }
+  }
+}

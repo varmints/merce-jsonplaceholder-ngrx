@@ -1,15 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "assets/scss/modules/_reset.scss";
+@import "assets/scss/modules/_colors.scss";
 @import "assets/scss/modules/_fonts.scss";
 @import "assets/scss/modules/_backgrounds.scss";
+@import "assets/scss/modules/_buttons.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
 @import "assets/scss/modules/_nav.scss";
 @import "assets/scss/modules/_posts.scss";
+@import "assets/scss/modules/_card.scss";
 @import "assets/scss/modules/_comments.scss";
-
-body {
-  font-family: "Inter";
-  font-size: 20px;
-  font-weight: 400;
-  background: #5522e8;
-}

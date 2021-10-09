@@ -51,7 +51,7 @@
     font-size: 12px;
     line-height: 15px;
     text-decoration-line: underline;
-    color: #5522e8;
+    color: $email-color;
     @include media-breakpoint-down(xl) {
       font-size: 8px;
       line-height: 10px;
@@ -94,7 +94,7 @@
     display: flex;
     justify-content: space-between;
 
-    .rounded-circle {
+    .card__rounded-circle {
       position: absolute;
       right: 48px;
       top: 0;
@@ -122,6 +122,8 @@
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
     padding: 48px 48px 0 48px;
     @include media-breakpoint-down(xl) {
       padding: 32px 32px 0 32px;
@@ -165,7 +167,6 @@
   }
 
   &__button {
-    border: none;
     margin: 0;
     padding: 0;
     width: auto;
@@ -187,7 +188,7 @@
       display: flex;
       align-items: center;
       color: #fff;
-      background: #041c26;
+      background: $black;
       padding: 32px 96px;
       font-weight: bold;
       font-size: 24px;

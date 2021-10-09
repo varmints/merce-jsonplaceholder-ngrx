@@ -1,6 +1,3 @@
-export default class Id {
-  constructor(id: number) {
-    this.id = id;
-  }
+export default interface Id {
   id: number;
 }

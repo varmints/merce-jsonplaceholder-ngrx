@@ -2,7 +2,7 @@
   <div class="col">
     <div class="card">
       <div class="card__header card__header--black">
-        <div class="rounded-circle rounded-circle--gradient">
+        <div class="card__rounded-circle card__rounded-circle--gradient">
           <img src="assets/svg/card__icon.svg" />
         </div>
         <div class="card__close" (click)="goToPostList()">
@@ -13,81 +13,7 @@
         <div class="card__title">{{ post.title }}</div>
         <div class="card__text">{{ post.body }}</div>
       </div>
-      <div class="card__comments" [hidden]="isCommentFormShow">
-        <div class="comments">
-          <div class="comments__header">
-            <div class="comments__title">Comments</div>
-          </div>
-          <div class="comments__list">
-            <div class="row" *ngFor="let comment of commentList">
-              <div class="col-4 comments__user">
-                <div class="comments__username">{{ comment.name }}</div>
-                <div class="comments__email">{{ comment.email }}</div>
-              </div>
-              <div class="col-8 comments__body">{{ comment.body }}</div>
-            </div>
-          </div>
-          <div class="comments__add">
-            <div class="comments__add-icon">
-              <button
-                type="button"
-                class="rounded-circle rounded-circle--black"
-                (click)="toggleDisplay()"
-              >
-                <img src="assets/svg/icons__comments__add--icon.svg" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card__add-comment" [hidden]="!isCommentFormShow">
-        <div class="comment-form__header">
-          <div class="comment-form__title">Add Comment</div>
-          <div class="rounded-circle rounded-circle--black">
-            <img src="assets/svg/icons__comment.svg" />
-          </div>
-        </div>
-        <form class="comment-form__container" [formGroup]="commentForm">
-          <input
-            class="comment-form__input"
-            required
-            formControlName="name"
-            placeholder="Name"
-          />
-
-          <input
-            class="comment-form__input"
-            required
-            formControlName="email"
-            placeholder="E-mail"
-          />
-          <textarea
-            class="comment-form__textarea"
-            rows="5"
-            required
-            formControlName="body"
-            placeholder="Comment"
-          ></textarea>
-          <div class="comment-form__footer">
-            <button
-              type="button"
-              class="comment-form__button comment-form__button--cancel"
-              (click)="toggleDisplay()"
-            >
-              Odrzuć
-            </button>
-            <button
-              class="comment-form__button comment-form__button--submit"
-              type="submit"
-              (click)="onSubmit(commentForm.value)"
-              [disabled]="commentForm.invalid"
-            >
-              Wyślij
-              <img class="ms-2" src="assets/svg/icons__plus--white.svg" />
-            </button>
-          </div>
-        </form>
-      </div>
+      <app-comments></app-comments>
     </div>
   </div>
 </div>

@@ -1,17 +1,18 @@
 <header class="header">
-  <div class="header__logo" routerLink="/">‘merce</div>
   <div class="header__nav">
+    <div class="header__logo" routerLink="/">‘merce</div>
     <div class="header__subtitle">SOCIAL<span>:CENTRE</span></div>
+    <hr class="header__line" />
     <div class="header__title">latest</div>
     <div class="header__pagination" *ngIf="showNav$ | async">
-      <button class="prev-page">
+      <button class="header__prev-page">
         <img src="assets/svg/icons__arrow--left--white.svg" />
       </button>
       <div>
-        <span class="current">01</span>
-        <span class="total">/ 06</span>
+        <span class="header__current">01</span>
+        <span class="header__total">/ 06</span>
       </div>
-      <button class="next-page">
+      <button class="header__next-page">
         <img src="assets/svg/icons__arrow--right--white.svg" />
       </button>
     </div>

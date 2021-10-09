@@ -21,7 +21,10 @@ import { environment } from '../environments/environment';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     CommentModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
