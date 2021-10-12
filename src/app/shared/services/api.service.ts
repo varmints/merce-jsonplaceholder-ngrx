@@ -11,8 +11,8 @@ export class ApiService {
   private apiURL: string = 'https://jsonplaceholder.typicode.com/';
   constructor(private http: HttpClient) {}
 
-  getPosts(page: number): Observable<any> {
-    return this.http.get<any>(
+  getPosts(page: number): Observable<Post[]> {
+    return this.http.get<Post[]>(
       this.apiURL + 'posts?_page=' + page + '&_limit=10'
     );
   }
