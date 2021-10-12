@@ -4,7 +4,10 @@ import Post from './post.model';
 
 export const GetPostsAction = createAction('[Post] - Get Posts');
 
-export const BeginGetPostsAction = createAction('[Post] - Begin Get Posts');
+export const BeginGetPostsAction = createAction(
+  '[Post] - Begin Get Posts',
+  props<{ page: number }>()
+);
 
 export const SuccessGetPostsAction = createAction(
   '[Post] - Success Get Posts',

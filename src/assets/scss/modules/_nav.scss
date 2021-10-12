@@ -154,6 +154,7 @@
   }
 
   &__prev-page {
+    cursor: pointer;
     margin-right: 26px;
 
     @include media-breakpoint-down(xl) {
@@ -178,6 +179,7 @@
   }
 
   &__next-page {
+    cursor: pointer;
     margin-left: 26px;
 
     @include media-breakpoint-down(xl) {
@@ -235,7 +237,10 @@
 }
 
 .header > div,
-.header__nav > div {
+.header__nav > .header__pagination,
+.header__title,
+.header__subtitle,
+.header__logo {
   position: absolute;
   pointer-events: auto;
 

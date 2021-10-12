@@ -1,0 +1,18 @@
+<button
+  class="header__prev-page"
+  (click)="onPreviousPage()"
+  [disabled]="page === 1"
+>
+  <img src="assets/svg/icons__arrow--left--white.svg" />
+</button>
+<div>
+  <span class="header__current">{{ page | zerofrontdigit }}</span>
+  <span class="header__total">/&ensp;{{ 10 | zerofrontdigit }}</span>
+</div>
+<button
+  class="header__next-page"
+  (click)="onNextPage()"
+  [disabled]="page === 10"
+>
+  <img src="assets/svg/icons__arrow--right--white.svg" />
+</button>

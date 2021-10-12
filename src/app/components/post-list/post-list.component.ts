@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import Post from 'src/app/posts/post.model';
 import PostState, { getPostsState } from 'src/app/posts/post.state';
+import { PaginationService } from 'src/app/shared/services/pagination.service';
 import * as PostActions from '../../posts/post.action';
 
 @Component({
@@ -15,17 +16,23 @@ import * as PostActions from '../../posts/post.action';
 export class PostListComponent implements OnInit {
   constructor(
     private store: Store<{ Posts: PostState }>,
-    private router: Router
+    private router: Router,
+    private data: PaginationService
   ) {
     this.post$ = store.pipe(select(getPostsState));
   }
 
+  page!: number;
+  subscription!: Subscription;
   post$: Observable<PostState>;
   postSubscription!: Subscription;
   postList: Post[] = [];
   postError: any;
 
   ngOnInit() {
+    this.subscription = this.data.currentPage.subscribe(
+      (page) => (this.page = page)
+    );
     this.postSubscription = this.post$
       .pipe(
         map((x) => {
@@ -35,7 +42,7 @@ export class PostListComponent implements OnInit {
       )
       .subscribe();
 
-    this.store.dispatch(PostActions.BeginGetPostsAction());
+    this.store.dispatch(PostActions.BeginGetPostsAction({ page: this.page }));
   }
 
   goTo(post: Post) {

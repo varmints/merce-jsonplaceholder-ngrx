@@ -10,9 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommentModule } from './modules/comment.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { ZerofrontdigitPipe } from './shared/pipes/zerofrontdigit.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    PaginationComponent,
+    ZerofrontdigitPipe,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

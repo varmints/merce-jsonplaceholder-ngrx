@@ -15,9 +15,11 @@ export class PostEffects {
     this.action$.pipe(
       ofType(PostActions.BeginGetPostsAction),
       mergeMap((action) =>
-        this.api.getPosts().pipe(
+        this.api.getPosts(action.page).pipe(
           map((data: Post[]) => {
-            return PostActions.SuccessGetPostsAction({ payload: data });
+            return PostActions.SuccessGetPostsAction({
+              payload: data,
+            });
           }),
           catchError((error: Error) => {
             return of(PostActions.ErrorPostAction(error));
